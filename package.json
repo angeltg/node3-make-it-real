@@ -1,0 +1,22 @@
+{
+  "name": "node3-make-it-real",
+  "version": "1.0.0",
+  "description": "Practicas con nodejs y mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angeltg/node3-make-it-real.git"
+  },
+  "author": "Angel Tellez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angeltg/node3-make-it-real/issues"
+  },
+  "homepage": "https://github.com/angeltg/node3-make-it-real#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
