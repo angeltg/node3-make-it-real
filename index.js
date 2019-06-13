@@ -8,6 +8,7 @@ const logger = (rea, res, next) => {
 
 app.set("view engine", "pug");
 app.set("views", "views");
+app.use(express.urlencoded()); // Para acceder al body del formulario
 app.use("/static",express.static("public"));
 //Usando el middleware
 app.use(logger);
@@ -16,14 +17,19 @@ app.get('/', (req, res) =>{
     const name = req.query.name;
     const age = req.query.age;
     //res.send(`<h1>Hola soy ${name} y tengo ${age} años</h1>`);
-    const notes = [
-        "Nota 1",
-        "Nota 2",
-        "Nota 3",
-        "Nota 4",
+    const notes = ["Nota 1","Nota 2","Nota 3","Nota 4",
     ]
     res.render("index", { name, age, notes});
 });
+
+app.get('/notes/new', (req, res) => {
+    res.render("new");
+});
+app.post('/notes', (req,res) => {
+    const body = req.body;
+    console.log(body);
+    res.redirect("/");
+})
 app.get('/users/:name', (req, res) =>{
     const name = req.params.name;
     res.send(`<h1>Hola ${name}</h1>`);
