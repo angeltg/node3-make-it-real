@@ -1,0 +1,11 @@
+extends layout
+
+block content
+        p Hola #{name}, tienes #{age} años
+        if name == "Pedro"
+            a(href="google.com") Ir a Google
+        else
+            a(href="yahoo.com") Ir a Yahoo
+
+        each note in notes
+            p #{note}
